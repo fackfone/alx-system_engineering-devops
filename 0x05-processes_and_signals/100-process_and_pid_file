@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script creates a file containing its PID
+# Displays To infinity and beyond indefenitely
+
+rmfile_exit()
+{
+	rm -f /var/run/myscript.pid;
+	exit
+}
+echo $$ >> /var/run/myscript.pid
+trap "echo 'I hate the kill command'; rmfile_exit" SIGTERM
+trap "echo 'Y U no love me?!'" SIGINT
+trap "echo 'I hate the kill command'; rmfile_exit" SIGQUIT
+
+
+while "true";
+do
+	echo "To infinity and beyond"
+	sleep 2
+done

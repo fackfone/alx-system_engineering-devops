@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Print the actual user parsed as argument
+
+su "$1" -s bin/bash -c "whoami"

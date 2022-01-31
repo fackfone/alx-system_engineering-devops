@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script displays PID with process name and processes
+# which name contain the word hash
+pgrep -l "bash"
